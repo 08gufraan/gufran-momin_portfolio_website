@@ -1,0 +1,188 @@
+html{
+	margin-top: -40px ;
+}
+body{
+	font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+	margin: 0px 0px 0px 0px;
+}
+#navbar{
+	display: block;
+    width: 100%;
+    height: 100px;
+    background-color: #be3144;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 10;
+    top: 0;
+    position: sticky;
+}
+#navbar ul{
+    margin-right: 0px;
+    float: right;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    align-content: center;
+}
+#navbar li{
+    display: inline-block;
+	padding: 0px 30px 0px 20px;
+    height: 100px;
+    width: 60px;
+    text-align: center;
+}
+#navbar ul li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 100px;
+}
+.project_name a:hover{
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+#navbar ul li:hover{
+	background-color: #45567d;
+}
+#about{
+    display: block;
+    margin-top: 0px;
+    background-color: black;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+#about{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    padding: 250px 0px 0px 0px
+}
+h1{
+    color: white;
+}
+#profession{
+    font-style: italic;
+    color: red;
+}
+#projects_section{
+    display: block;
+    background-color: #45567d;
+    margin-top: -30px;
+}
+#projects_heading{
+    color: white;
+    text-decoration: underline;
+}
+#projects_title{
+    padding-top: 50px;
+    text-align: center;
+}
+#projects{
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    display: flex;
+}
+#projects button{
+    border: none;
+    margin: 0px 0px;
+    width: 5%;
+    height: 120px;
+    font-size: 30px;
+    display: inline-block ;
+    border: 0.5px dotted black;
+    margin: auto;
+    color: black;
+}
+#projects button:hover{
+    background-color:#45567d;
+    
+}
+#project_list{
+    width: 95%;
+}
+#previous{
+    background-color: #bedeff;
+}
+#next{
+    background-color: #7137dc ;
+}
+#img{ 
+    margin: 10px 10px;
+    width: 98%;
+    height: 350px;
+   
+}
+#projects_description{
+    background-image: linear-gradient(62deg, #bedeff 0%, #7137dc 100%);
+    text-align: center;
+    color: black;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0px ;
+    font-size: 35px;
+}
+button{
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    font-size: 35px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 100px;
+    background-color: #303841;   
+}
+button:hover{
+    cursor: pointer;
+    background-color: #be3144;
+}
+#contact{
+    margin-top: -40px;
+    background-color: #303841;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+#contact p{
+    margin-top: -35px;
+    font-size: 20px;
+    font-style: italic;
+}
+#contact h1{
+    padding-top: 130px;
+}
+#connect{
+    width: 100%;
+    height: 300px;
+}
+#connect ul li{
+    display: inline-block;
+    text-decoration: none;
+}
+#connect ul{
+    display: inline-block;
+}
+#connect ul li a{
+    color: white;
+    text-decoration: none;
+}
+#connect ul li a:hover{
+    color: #be3144;
+    text-decoration: underline;
+}
+hr{
+    background-color:#be3144;
+    width: 100%;
+    height: 5px;
+}
+footer{
+    font-size: 15px;
+}

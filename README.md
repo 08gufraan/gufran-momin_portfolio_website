@@ -2,4 +2,4 @@
 A portfolio website for front end web developer
 
 
-click fro website: 
+click fro website: https://08gufraan.github.io/gufran-momin_portfolio_website/

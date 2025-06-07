@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shah Washing Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  #about strong {
+      color: black;
+    }
+  #about strong:hover{
+    color: #ff9800;
+  }
+  .social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.social-icons .icon {
+  font-size: 28px;
+  color: white;
+  background-color: #ff9800;
+  border-radius: 50%;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.2);
+  background: linear-gradient(135deg, #333, #444);
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff9800;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .cta-button:hover {
+      background-color: #e68a00;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .form-section {
+      background: #f0f8ff;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    .form-section label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+    .form-section select,
+    .form-section input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .price-display {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #003f8a;
+    }
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+    #scrollToTopBtn .material-icons {
+      vertical-align: middle;
+      font-size: 28px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #203a43;
+      color: white;
+    }
+    .review-iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .dropdown {
+      background: #fff8e1;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .recommended {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 2px 8px;
+      font-size: 0.8rem;
+      border-radius: 5px;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      z-index: 1100;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    nav ul {
+      
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: #203a43;
+      position: sticky; 
+      top: 0 px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 10px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #ff9800;
+      border-radius: 6px;
+    }
+
+    /* Responsive for mobile */
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #203a43;
+        z-index: 1000;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+      section {
+        padding: 20px 15px;
+      }
+      /* Pricing boxes */
+      #pricing .pricing-box {
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Pricing box design */
+    #pricing {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    #pricing .pricing-box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      min-width: 280px;
+      flex: 1 1 300px;
+    }
+    #pricing .pricing-box h3 {
+      margin-bottom: 15px;
+      text-align: center;
+      color: #203a43;
+    }
+    #pricing ul {
+      list-style: none;
+      padding: 0;
+    }
+    #pricing ul li {
+      font-size: 16px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    #pricing ul li .recommended {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 2px 8px;
+      font-size: 0.8rem;
+      border-radius: 5px;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    /* Testimonials box design */
+    #testimonials {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    #testimonials .testimonial-box {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #333;
+      position: relative;
+    }
+    #testimonials .testimonial-box::before {
+      content: "“";
+      font-size: 40px;
+      color: #ff9800;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-weight: bold;
+    }
+    #testimonials .testimonial-box .author {
+      font-weight: 600;
+      font-style: normal;
+      margin-top: 10px;
+      text-align: right;
+      color: #203a43;
+    }
+
+    /* WhatsApp Book Button */
+    #bookWhatsAppBtn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+    }
+    #bookWhatsAppBtn:hover {
+      background-color: #1ebe57;
+    }
+
+    /* Query Form */
+    #queryForm {
+      padding: 30px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #queryForm h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #203a43;
+    }
+    #queryForm form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+    }
+    #queryForm form input,
+    #queryForm form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      resize: vertical;
+    }
+    #queryForm form button {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    #queryForm form button:hover {
+      background-color: #1ebe57;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h1>Welcome to Shah Washing Center</h1>
+    <p>Premium Car Spa in Wadgaon sheri, Pune</p>
+    <a href="#location" class="cta-button">Find Us</a>
+  </header>
+
+  <nav style="position: sticky; top: 0px; z-index: 2;">
+    <ul id="navMenu">
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#location">Find Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#queryForm">Send Query</a></li>
+      <li><a href="#formSection">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Us -->
+  <!-- about.html -->
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>
+    At <strong>Shah Washing Center,</strong> we are passionate about delivering a premium car care experience that goes beyond expectations.
+    With a team of <strong>skilled professionals</strong> and <strong>eco-friendly techniques</strong>, we ensure every vehicle receives the highest standard
+    of cleanliness and detailing. From basic washes to <strong>full detailing,</strong> we treat each car as if it were our own. Our
+    commitment to <strong>quality, punctuality, and customer satisfaction</strong> has earned us the trust of vehicle owners across the city.
+    Whether it’s a two-wheeler or a luxury sedan, We guarantees a spotless, showroom-like finish every time.
+  </p>
+</section>
+
+    <!-- Vehicle Type & Service Form Section -->
+
+  <section class="form-section" id="formSection">
+    <h2>Select Your Vehicle & Service</h2>
+    <label for="vehicleType">Vehicle Type:</label>
+    <select id="vehicleType">
+      <option value="">-- Select Vehicle Type --</option>
+      <option value="Two Wheeler">Two Wheeler</option>
+      <option value="Four Wheeler">Four Wheeler</option>
+    </select>
+
+    <label for="serviceType">Service Type:</label>
+    <select id="serviceType">
+      <option value="">-- Select Service --</option>
+      <option value="Only Wash">Only Wash</option>
+      <option value="Full Body Wash">Full Body Wash <span class="recommended">Recommended</span></option>
+      <option value="Detailing">Detailing</option>
+      <option value="Engine Cleaning">Engine Cleaning</option>
+      <option value="Interior Cleaning">Interior Cleaning</option>
+      <option value="Ceramic Coating">Ceramic Coating</option>
+      <option value="PPF">PPF</option>
+    </select>
+
+    <div class="price-display" id="priceDisplay">Price: ₹0</div>
+
+    <button id="bookWhatsAppBtn">Book via WhatsApp</button>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <h2>Testimonials</h2>
+    <p style="text-align: center;"><strong>Read what our customers are saying:</strong></p>
+    <div class="testimonial-box">
+      <p>Great Experience, i have done ceramic coating on my bike.</p>
+      <div class="author">- 
+gufran momin</div>
+    </div>
+    <div class="testimonial-box">
+      <p>Best Washing Service Centre in Wadgoan sheri.Very professional and quick service. My motorcycle looked good as new after just in 30 Mins at Shah Washing Center.They are washing the vehicles very neatly and carefully, Amazing Work Keep it Up👍</p>
+      <div class="author">- Adnan Shaikh</div>
+    </div>
+
+    <div class="testimonial-box">
+      <p>Provide excellent service with quality. Recently done Premium washing on my bike.</p>
+      <div class="author">- Abid khan Inamdar</div>
+    </div>
+
+    <div class="testimonial-box">
+      <p>Best Washing Service Centre in Wadgoan sheri.
+They are washing the vehicles very neatly and carefully, Amazing work keep it up.</p>
+      <div class="author">- Muzaffar Baig MB</div>
+    </div>
+
+    <!-- Dropdown Info Section -->
+    <details class="dropdown">
+      <summary>Why Choose Shah Washing Center?</summary>
+      <p>We use only premium products, advanced tools, and ensure customer satisfaction with every wash. Trusted by hundreds of satisfied vehicle owners.</p>
+    </details>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="pricing-box">
+      <h3>Four Wheelers Pricing</h3>
+      <ul>
+        <li>Only Wash - ₹100</li>
+        <li>Full Body Wash - ₹300 <span class="recommended">Recommended</span></li>
+        <li>Detailing - ₹400</li>
+        <li>Engine Cleaning - ₹500</li>
+        <li>Interior Cleaning - ₹200</li>
+        <li>Ceramic Coating - ₹7000 <span class="recommended">Recommended</span></li>
+        <li>PPF - ₹20000</li>
+      </ul>
+    </div>
+
+    <div class="pricing-box">
+      <h3>Two Wheelers Pricing</h3>
+      <ul>
+        <li>Only Wash - ₹50</li>
+        <li>Full Body Wash - ₹80 <span class="recommended">Recommended</span></li>
+        <li>Detailing - Not Applicable</li>
+        <li>Engine Cleaning - Not Applicable</li>
+        <li>Interior Cleaning - Not Applicable</li>
+        <li>Ceramic Coating - ₹3000 <span class="recommended">Recommended</span></li>
+        <li>PPF - ₹7000</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section id="location" class="section">
+    <h2>Our Location</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.0316879619974!2d73.8317433!3d18.569013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf63dfd29065%3A0xa3ecdc80cb5e665a!2sShineMax%20Car%20Wash!5e0!3m2!1sen!2sin!4v1717663088004!5m2!1sen!2sin"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: shahwashingcenter@gmail.com</p>
+    <p>Phone: +91 7030380512</p>
+  </section>
+  <div class="social-icons">
+  <a href="https://instagram.com/shah_washing_centre" target="_blank" class="icon instagram" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/7030380512" target="_blank" class="icon whatsapp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="mailto:shahwashingcenter@gmail.com" class="icon gmail" title="Gmail">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+  <!-- Query Form -->
+  <section id="queryForm">
+    <h2>Send Us Your Query</h2>
+    <form id="query-form">
+      <label for="queryName">Name:</label>
+      <input type="text" id="queryName" name="queryName" required />
+
+      <label for="queryEmail">Gmail:</label>
+      <input type="email" id="queryEmail" name="queryEmail" placeholder="example@gmail.com" required />
+
+      <label for="queryMessage">Your Query:</label>
+      <textarea id="queryMessage" name="queryMessage" rows="5" required></textarea>
+
+      <button type="submit">Send Query</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shah Washing Center. All rights reserved.</p>
+  </footer>
+
+  <button id="scrollToTopBtn" onclick="scrollToTop()">
+    <span class="material-icons">directions_car</span>
+  </button>
+
+  <script>
+    // Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Scroll to top button
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById('scrollToTopBtn');
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    };
+
+    // Price calculation based on vehicle and service
+    const vehicleTypeSelect = document.getElementById('vehicleType');
+    const serviceTypeSelect = document.getElementById('serviceType');
+    const priceDisplay = document.getElementById('priceDisplay');
+    const bookBtn = document.getElementById('bookWhatsAppBtn');
+
+    const pricing = {
+      "Four Wheeler": {
+        "Only Wash": 100,
+        "Full Body Wash": 300,
+        "Detailing": 400,
+        "Engine Cleaning": 500,
+        "Interior Cleaning": 200,
+        "Ceramic Coating": 7000,
+        "PPF": 20000
+      },
+      "Two Wheeler": {
+        "Only Wash": 50,
+        "Full Body Wash": 80,
+        "Detailing": "NA",
+        "Engine Cleaning": "NA",
+        "Interior Cleaning": "NA",
+        "Ceramic Coating": 3000,
+        "PPF": 7000
+      }
+    };
+
+    function updatePrice() {
+      const vehicle = vehicleTypeSelect.value;
+      const service = serviceTypeSelect.value;
+      if (!vehicle || !service) {
+        priceDisplay.textContent = "Price: ₹0";
+        bookBtn.disabled = true;
+        bookBtn.style.cursor = "not-allowed";
+        return;
+      }
+      let price = pricing[vehicle][service];
+      if (price === "NA") {
+        priceDisplay.textContent = "Price: Not Applicable";
+        bookBtn.disabled = true;
+        bookBtn.style.cursor = "not-allowed";
+      } else {
+        priceDisplay.textContent = `Price: ₹${price}`;
+        bookBtn.disabled = false;
+        bookBtn.style.cursor = "pointer";
+      }
+    }
+
+    vehicleTypeSelect.addEventListener('change', updatePrice);
+    serviceTypeSelect.addEventListener('change', updatePrice);
+
+    // WhatsApp booking link
+    bookBtn.addEventListener('click', () => {
+      const vehicle = vehicleTypeSelect.value;
+      const service = serviceTypeSelect.value;
+      let price = pricing[vehicle]?.[service];
+      if (!vehicle || !service || price === "NA") {
+        alert("Please select valid vehicle and service types.");
+        return;
+      }
+      const phone = "7030380512"; // Your WhatsApp phone number without + or 00
+      const message = encodeURIComponent(
+        `Hello Shah Washing Center, I want to book a *${service}* for my *${vehicle}*. Please let me know the available slots.`
+      );
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.open(url, "_blank");
+    });
+
+    // Query Form Submission
+    const queryForm = document.getElementById('query-form');
+
+    queryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // In real application, you would send this data to your server or API
+      // Here we just show a confirmation alert for demonstration
+      alert('Thank you for your query! We will get back to you shortly.');
+
+      queryForm.reset();
+    });
+  </script>
+</body>
+</html>
